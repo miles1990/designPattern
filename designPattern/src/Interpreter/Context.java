@@ -4,6 +4,10 @@ public class Context {
     private String input;
     private int output;
 
+    public Context(String input) {
+        this.input = input;
+    }
+
     public String getInput() {
         return input;
     }
