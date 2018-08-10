@@ -8,18 +8,23 @@ public class Code_03_HeapSort {
 		if (arr == null || arr.length < 2) {
 			return;
 		}
+		//形成大根堆
 		for (int i = 0; i < arr.length; i++) {
 			heapInsert(arr, i);
 		}
-		int size = arr.length;
-		swap(arr, 0, --size);
-		while (size > 0) {
-			heapify(arr, 0, size);
-			swap(arr, 0, --size);
+		//记录堆大小
+		int heapSize = arr.length;
+		//头结点与最后一个叶节点交换位置
+		swap(arr, 0, --heapSize);
+		//堆重新形成大根堆
+		while (heapSize > 0) {
+			heapify(arr, 0, heapSize);
+			swap(arr, 0, --heapSize);
 		}
 	}
 
 	public static void heapInsert(int[] arr, int index) {
+		//如果新来的数大于父节点，则与父节点调整位置
 		while (arr[index] > arr[(index - 1) / 2]) {
 			swap(arr, index, (index - 1) / 2);
 			index = (index - 1) / 2;
@@ -27,13 +32,18 @@ public class Code_03_HeapSort {
 	}
 
 	public static void heapify(int[] arr, int index, int size) {
+		//找到左孩子下标位置
 		int left = index * 2 + 1;
 		while (left < size) {
+			//先判断有没有右孩子，如果有就与左孩子比较，得到最大的那个孩子下标位置
 			int largest = left + 1 < size && arr[left + 1] > arr[left] ? left + 1 : left;
+			//最大的孩子与父节点作比较，得出最大值的下标
 			largest = arr[largest] > arr[index] ? largest : index;
+			//如果最大值的下标等于它本身，则退出
 			if (largest == index) {
 				break;
 			}
+			//交换位置
 			swap(arr, largest, index);
 			index = largest;
 			left = index * 2 + 1;

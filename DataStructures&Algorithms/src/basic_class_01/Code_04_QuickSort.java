@@ -13,16 +13,22 @@ public class Code_04_QuickSort {
 
 	public static void quickSort(int[] arr, int l, int r) {
 		if (l < r) {
+			//随机取一个数与最后一个数交换位置
 			swap(arr, l + (int) (Math.random() * (r - l + 1)), r);
+			//进行分区
 			int[] p = partition(arr, l, r);
+			//递归分界点左边区域
 			quickSort(arr, l, p[0] - 1);
+			//递归分界点右边区域
 			quickSort(arr, p[1] + 1, r);
 		}
 	}
 
 	public static int[] partition(int[] arr, int l, int r) {
 		int less = l - 1;
+		//把最后一个数作为分界点，不参与分界
 		int more = r;
+		//把比分界点小的数移到左边，大的数移到右边，直到记录下标的l等于more
 		while (l < more) {
 			if (arr[l] < arr[r]) {
 				swap(arr, ++less, l++);
@@ -32,7 +38,9 @@ public class Code_04_QuickSort {
 				l++;
 			}
 		}
+		//把不参与分界的点移动到more点的位置
 		swap(arr, more, r);
+		//返回分界区域数组
 		return new int[] { less + 1, more };
 	}
 
