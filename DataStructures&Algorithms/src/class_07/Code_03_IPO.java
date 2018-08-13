@@ -38,8 +38,8 @@ public class Code_03_IPO {
 			nodes[i] = new Node(Profits[i], Capital[i]);
 		}
 
-		PriorityQueue<Node> minCostQ = new PriorityQueue<>(new MinCostComparator());
-		PriorityQueue<Node> maxProfitQ = new PriorityQueue<>(new MaxProfitComparator());
+		PriorityQueue<Node> minCostQ = new PriorityQueue<>(Integer.MAX_VALUE,new MinCostComparator());
+		PriorityQueue<Node> maxProfitQ = new PriorityQueue<>(Integer.MAX_VALUE,new MaxProfitComparator());
 		for (int i = 0; i < nodes.length; i++) {
 			minCostQ.add(nodes[i]);
 		}

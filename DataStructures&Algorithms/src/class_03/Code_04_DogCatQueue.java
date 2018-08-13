@@ -3,6 +3,9 @@ package class_03;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+* 猫狗队列
+* */
 public class Code_04_DogCatQueue {
 
 	public static class Pet {

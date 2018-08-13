@@ -2,6 +2,10 @@ package basic_class_01;
 
 import java.util.Arrays;
 
+
+/*
+* 桶排序
+* */
 public class Code_11_MaxGap {
 
 	public static int maxGap(int[] nums) {
@@ -11,6 +15,7 @@ public class Code_11_MaxGap {
 		int len = nums.length;
 		int min = Integer.MAX_VALUE;
 		int max = Integer.MIN_VALUE;
+		//找出最大最小值
 		for (int i = 0; i < len; i++) {
 			min = Math.min(min, nums[i]);
 			max = Math.max(max, nums[i]);
@@ -18,14 +23,21 @@ public class Code_11_MaxGap {
 		if (min == max) {
 			return 0;
 		}
+		//定义三个数组，作为桶，记录最大最小及是否有数进桶
+		//其中必有一个桶为空
 		boolean[] hasNum = new boolean[len + 1];
 		int[] maxs = new int[len + 1];
 		int[] mins = new int[len + 1];
 		int bid = 0;
+
 		for (int i = 0; i < len; i++) {
+			//计算把数放进哪个桶
 			bid = bucket(nums[i], len, min, max);
+			//更新桶中最小值
 			mins[bid] = hasNum[bid] ? Math.min(mins[bid], nums[i]) : nums[i];
+			//更新桶中最大值
 			maxs[bid] = hasNum[bid] ? Math.max(maxs[bid], nums[i]) : nums[i];
+			//标记桶不为空
 			hasNum[bid] = true;
 		}
 		int res = 0;
@@ -33,6 +45,7 @@ public class Code_11_MaxGap {
 		int i = 1;
 		for (; i <= len; i++) {
 			if (hasNum[i]) {
+				//用后一个位置的最小值减去前一个位置的最大值，得出最大差值
 				res = Math.max(res, mins[i] - lastMax);
 				lastMax = maxs[i];
 			}

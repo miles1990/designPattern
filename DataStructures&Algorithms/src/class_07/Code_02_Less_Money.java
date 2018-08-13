@@ -56,7 +56,7 @@ public class Code_02_Less_Money {
 		System.out.println();
 
 		// min heap use Comparator
-		PriorityQueue<Integer> minQ2 = new PriorityQueue<>(new MinheapComparator());
+		PriorityQueue<Integer> minQ2 = new PriorityQueue<>(Integer.MAX_VALUE,new MinheapComparator());
 		for (int i = 0; i < arrForHeap.length; i++) {
 			minQ2.add(arrForHeap[i]);
 		}
@@ -66,7 +66,7 @@ public class Code_02_Less_Money {
 		System.out.println();
 
 		// max heap use Comparator
-		PriorityQueue<Integer> maxQ = new PriorityQueue<>(new MaxheapComparator());
+		PriorityQueue<Integer> maxQ = new PriorityQueue<>(Integer.MAX_VALUE,new MaxheapComparator());
 		for (int i = 0; i < arrForHeap.length; i++) {
 			maxQ.add(arrForHeap[i]);
 		}

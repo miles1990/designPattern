@@ -1,5 +1,9 @@
 package class_03;
 
+
+/*
+* 之字打印矩阵
+* */
 public class Code_08_ZigZagPrintMatrix {
 
 	public static void printMatrixZigZag(int[][] matrix) {

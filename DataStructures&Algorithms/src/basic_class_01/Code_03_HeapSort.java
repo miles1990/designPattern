@@ -14,11 +14,13 @@ public class Code_03_HeapSort {
 		}
 		//记录堆大小
 		int heapSize = arr.length;
-		//头结点与最后一个叶节点交换位置
+		//取出头结点(最大的数)放在最后位置上
 		swap(arr, 0, --heapSize);
 		//堆重新形成大根堆
 		while (heapSize > 0) {
+			//重新形成大根堆
 			heapify(arr, 0, heapSize);
+			//取出头结点(最大的数)放在最后位置上
 			swap(arr, 0, --heapSize);
 		}
 	}

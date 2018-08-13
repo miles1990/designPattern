@@ -2,6 +2,7 @@ package class_03;
 
 public class Code_01_Array_To_Stack_Queue {
 
+	//用数组实现栈结构
 	public static class ArrayStack {
 		private Integer[] arr;
 		private Integer size;
@@ -36,6 +37,7 @@ public class Code_01_Array_To_Stack_Queue {
 		}
 	}
 
+	//用数组实现队列结构
 	public static class ArrayQueue {
 		private Integer[] arr;
 		private Integer size;
@@ -65,6 +67,7 @@ public class Code_01_Array_To_Stack_Queue {
 			}
 			size++;
 			arr[last] = obj;
+			//
 			last = last == arr.length - 1 ? 0 : last + 1;
 		}
 
@@ -74,6 +77,7 @@ public class Code_01_Array_To_Stack_Queue {
 			}
 			size--;
 			int tmp = first;
+			//
 			first = first == arr.length - 1 ? 0 : first + 1;
 			return arr[tmp];
 		}

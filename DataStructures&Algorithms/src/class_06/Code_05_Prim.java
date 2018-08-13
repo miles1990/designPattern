@@ -18,7 +18,7 @@ public class Code_05_Prim {
 	}
 
 	public static Set<Edge> primMST(Graph graph) {
-		PriorityQueue<Edge> priorityQueue = new PriorityQueue<>(
+		PriorityQueue<Edge> priorityQueue = new PriorityQueue<>(Integer.MAX_VALUE,
 				new EdgeComparator());
 		HashSet<Node> set = new HashSet<>();
 		Set<Edge> result = new HashSet<>();

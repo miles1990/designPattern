@@ -2,6 +2,9 @@ package basic_class_01;
 
 import java.util.Arrays;
 
+/*
+* 归并排序
+* */
 public class Code_05_MergeSort {
 
 	public static void mergeSort(int[] arr) {
@@ -15,7 +18,9 @@ public class Code_05_MergeSort {
 		if (l == r) {
 			return;
 		}
+		//找到数组中间那个数的下标
 		int mid = l + ((r - l) >> 1);
+		//左边排序完成后，右边再开始排
 		mergeSort(arr, l, mid);
 		mergeSort(arr, mid + 1, r);
 		merge(arr, l, mid, r);
@@ -26,9 +31,12 @@ public class Code_05_MergeSort {
 		int i = 0;
 		int p1 = l;
 		int p2 = m + 1;
+		//把左右两边已经排好序的数组放在一起
+		//比较两边数组第一个数，小的那个放在help数组第一位，然后比较第二个。。。直到有一边达到最后一个点
 		while (p1 <= m && p2 <= r) {
 			help[i++] = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++];
 		}
+		//如果有一边达到最后一个点，必然有一边没有达到，把没有达到的那边复制到help数组中
 		while (p1 <= m) {
 			help[i++] = arr[p1++];
 		}
