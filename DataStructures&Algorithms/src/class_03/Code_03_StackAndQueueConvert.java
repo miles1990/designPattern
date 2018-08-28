@@ -6,6 +6,7 @@ import java.util.Stack;
 
 public class Code_03_StackAndQueueConvert {
 
+	//用栈结构实现队列结构
 	public static class TwoStacksQueue {
 		private Stack<Integer> stackPush;
 		private Stack<Integer> stackPop;
@@ -42,6 +43,7 @@ public class Code_03_StackAndQueueConvert {
 		}
 	}
 
+	//用队列结构实现栈结构
 	public static class TwoQueuesStack {
 		private Queue<Integer> queue;
 		private Queue<Integer> help;
@@ -59,6 +61,7 @@ public class Code_03_StackAndQueueConvert {
 			if (queue.isEmpty()) {
 				throw new RuntimeException("Stack is empty!");
 			}
+			//弹出只剩最后一个数
 			while (queue.size() != 1) {
 				help.add(queue.poll());
 			}
@@ -72,10 +75,13 @@ public class Code_03_StackAndQueueConvert {
 			if (queue.isEmpty()) {
 				throw new RuntimeException("Stack is empty!");
 			}
+			//弹出只剩最后一个数
 			while (queue.size() > 1) {
 				help.add(queue.poll());
 			}
+			//弹出最后一个数
 			int res = queue.poll();
+			//把help赋给queue
 			swap();
 			return res;
 		}

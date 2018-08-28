@@ -2,6 +2,7 @@ package class_07;
 
 public class Code_01_TrieTree {
 
+	//前缀树
 	public static class TrieNode {
 		public int path;
 		public int end;
@@ -21,6 +22,7 @@ public class Code_01_TrieTree {
 			root = new TrieNode();
 		}
 
+		//插入一个字符串
 		public void insert(String word) {
 			if (word == null) {
 				return;
@@ -34,11 +36,14 @@ public class Code_01_TrieTree {
 					node.nexts[index] = new TrieNode();
 				}
 				node = node.nexts[index];
+				//字符串沿途加一
 				node.path++;
 			}
+			//走到结尾，结尾加一
 			node.end++;
 		}
 
+		//删除一个字符串
 		public void delete(String word) {
 			if (search(word) != 0) {
 				char[] chs = word.toCharArray();
@@ -56,6 +61,7 @@ public class Code_01_TrieTree {
 			}
 		}
 
+		//查询字符串出现次数
 		public int search(String word) {
 			if (word == null) {
 				return 0;
@@ -73,6 +79,7 @@ public class Code_01_TrieTree {
 			return node.end;
 		}
 
+		//查询以某个字符串开头的个数
 		public int prefixNumber(String pre) {
 			if (pre == null) {
 				return 0;

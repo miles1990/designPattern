@@ -2,6 +2,7 @@ package class_05;
 
 public class Code_03_Islands {
 
+	//并查集结构，岛问题
 	public static int countIslands(int[][] m) {
 		if (m == null || m[0] == null) {
 			return 0;

@@ -15,6 +15,7 @@ public class Code_01_Array_To_Stack_Queue {
 			size = 0;
 		}
 
+		//得到一个数
 		public Integer peek() {
 			if (size == 0) {
 				return null;
@@ -22,6 +23,7 @@ public class Code_01_Array_To_Stack_Queue {
 			return arr[size - 1];
 		}
 
+		//添加一个数
 		public void push(int obj) {
 			if (size == arr.length) {
 				throw new ArrayIndexOutOfBoundsException("The queue is full");
@@ -29,6 +31,7 @@ public class Code_01_Array_To_Stack_Queue {
 			arr[size++] = obj;
 		}
 
+		//弹出一个数
 		public Integer pop() {
 			if (size == 0) {
 				throw new ArrayIndexOutOfBoundsException("The queue is empty");

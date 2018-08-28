@@ -1,5 +1,8 @@
 package class_03;
 
+/*
+* 把一个链表小于的放在左边，等于的放在中间，大于的放在右边
+* */
 public class Code_12_SmallerEqualBigger {
 
 	public static class Node {

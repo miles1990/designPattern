@@ -2,6 +2,9 @@ package class_04;
 
 import java.util.Stack;
 
+/*
+* 二叉树的先序遍历、中序遍历、后序遍历
+* */
 public class Code_01_PreInPosTraversal {
 
 	public static class Node {

@@ -2,6 +2,9 @@ package class_03;
 
 import java.util.HashMap;
 
+/*
+* 拷贝一个含有随机指针的链表
+* */
 public class Code_13_CopyListWithRandom {
 
 	public static class Node {

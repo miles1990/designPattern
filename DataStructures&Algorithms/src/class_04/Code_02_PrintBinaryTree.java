@@ -1,5 +1,8 @@
 package class_04;
 
+/*
+* 打印直观的二叉树
+* */
 public class Code_02_PrintBinaryTree {
 
 	public static class Node {

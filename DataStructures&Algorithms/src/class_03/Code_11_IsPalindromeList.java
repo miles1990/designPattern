@@ -2,6 +2,9 @@ package class_03;
 
 import java.util.Stack;
 
+/*
+* 对称链表
+* */
 public class Code_11_IsPalindromeList {
 
 	public static class Node {

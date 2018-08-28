@@ -1,5 +1,8 @@
 package class_03;
 
+/*
+* 单链表有环无环，以及是否相交问题
+* */
 public class Code_14_FindFirstIntersectNode {
 
 	public static class Node {
